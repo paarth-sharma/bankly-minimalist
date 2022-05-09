@@ -78,6 +78,10 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const toggle = document.querySelector('.toggle');
+const dark = document.querySelector('.dark_change');
+const exception = document.querySelector('.movements');
+
 /////////////////////////////////////////////////
 // Functions
 
@@ -86,7 +90,7 @@ const formatMovementDate = function (date, locale) {
     Math.round(Math.abs((date2 - date1) / (1000 * 60 * 60 * 24)));
 
   const daysPassed = calcDaysPassed(new Date(), date);
-  console.log(daysPassed);
+  // console.log(daysPassed);
 
   if (daysPassed === 0) return 'Today';
   if (daysPassed === 1) return 'Yesterday';
@@ -228,7 +232,7 @@ btnLogin.addEventListener('click', function (e) {
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value
   );
-  console.log(currentAccount);
+  // console.log(currentAccount);
 
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     // Display UI and message
@@ -342,7 +346,7 @@ btnClose.addEventListener('click', function (e) {
     const index = accounts.findIndex(
       acc => acc.username === currentAccount.username
     );
-    console.log(index);
+    // console.log(index);
     // .indexOf(23)
 
     // Delete account
@@ -360,6 +364,12 @@ btnSort.addEventListener('click', function (e) {
   e.preventDefault();
   displayMovements(currentAccount, !sorted);
   sorted = !sorted;
+});
+
+// Dark Mode
+toggle.addEventListener('click', function () {
+  dark.classList.toggle('darkmode');
+  exception.classList.toggle('darkmode');
 });
 
 /////////////////////////////////////////////////
@@ -524,12 +534,12 @@ const pizzaTimer = setTimeout(
   3000,
   ...ingredients
 );
-console.log('Waiting...');
+// console.log('Waiting...');
 
 if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
 
 //SetInterval
 setInterval(function () {
   const now = new Date();
-  console.log(now);
+  // console.log(now);
 }, 1000);
