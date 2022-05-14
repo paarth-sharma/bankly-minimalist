@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet"/>
 
-    <link rel="stylesheet" href="style.css" />
-    <title>Bankist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+
+    <title>Bankly</title>
   </head>
+
   <body class="dark_change">
+
     <!-- TOP NAVIGATION -->
+  
     <nav>
       <p class="welcome">Log in to get started</p>
-      <img src="logo.png" alt="Logo" class="logo" />
+      <img src="/logo.png" type ="image/png" alt="Logo" class="logo" />
       <form class="login">
         <input
           type="text"
           placeholder="user"
           class="login__input login__input--user"
         />
+
         <!-- In practice, use type="password" -->
+
         <input
           type="text"
           placeholder="PIN"
@@ -37,8 +41,13 @@
     </nav>
 
     <main class="app">
+
       <!-- BALANCE -->
+
       <div class="balance">
+
+        
+
         <div>
           <p class="balance__label">Current balance</p>
           <p class="balance__date">
@@ -122,10 +131,7 @@
     <input type="checkbox" id="switch" class="checkbox" />
     <label for="switch" class="toggle"> </label>
 
-    <!-- <footer>
-      &copy; by Jonas Schmedtmann. Don't claim as your own :)
-    </footer> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='script/script.js')}}"></script>
 
-    <script src="script.js"></script>
   </body>
 </html>
