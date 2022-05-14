@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+    <img src="{{ url_for('static', filename='data/icon.png') }}" width="50" height="50"></img>
     
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet"/>
@@ -20,7 +20,7 @@
   
     <nav>
       <p class="welcome">Log in to get started</p>
-      <img src="/logo.png" type ="image/png" alt="Logo" class="logo" />
+      <img src="{{ url_for('static', filename='data/logo.png') }}" width="50" height="50"></img>
       <form class="login">
         <input
           type="text"
